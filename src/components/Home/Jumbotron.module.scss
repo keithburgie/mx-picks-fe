@@ -1,0 +1,85 @@
+@import "../../variables";
+
+$jumbotronHeight: 40vh;
+$slashWidth: 100px;
+$slashColor: gray;
+$slashSkew: 15deg;
+
+.jumbotron {
+  color: white;
+  height: $jumbotronHeight;
+  max-height: 600px;
+  position: relative;
+  overflow: hidden;
+
+  #{&}-container {
+    display: flex;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.4);
+    }
+  }
+
+  .city-background,
+  .rider-background {
+    position: absolute;
+    background: center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
+  .rider-background {
+    transform: skew($slashSkew);
+    width: 110%;
+    right: 10%;
+    background-position: left;
+  }
+  
+  .slash-container {
+    position: absolute;
+    background: $slashColor;
+    width: 67%;
+    height: 100%;
+    right: -10%;
+    top: 0;
+    transform: skew(-$slashSkew);
+    overflow: hidden;
+    // border-left: 20px solid blue;
+
+    // &:before {
+    //   content: "";
+    //   width: 0;
+    //   height: 100%;
+    //   border-style: solid;
+    //   border-width: 0 0 $jumbotronHeight $slashWidth;
+    //   border-color: transparent transparent $slashColor transparent;
+    //   position: absolute;
+    //   top: 0;
+    //   left: -$slashWidth;
+    // }
+    // &:after {
+    //   content: "";
+    //   width: 2rem;
+    //   height: 100%;
+    //   background: yellow;
+    //   position: absolute;
+    //   top: 0;
+    //   left: -2rem;
+    // }
+  }
+
+  
+}
+
+.right-col {
+  text-align: center;
+}
