@@ -9,10 +9,17 @@ export default function CountdownTimer({ eventDate }) {
       return <DropTheGate />;
     } else {
       return (
-        <h2>
-          {zeroPad(days)} Days, {zeroPad(hours)} Hours, {zeroPad(minutes)}{" "}
-          Minutes &amp; {zeroPad(seconds)} Seconds until Gate Drop
-        </h2>
+        <>
+          <h2>
+            Next Event Starts In:
+          </h2>
+          <h3 className="countdown">
+            <span>{zeroPad(days)} <small>Days</small></span>
+            <span>{zeroPad(hours)} <small>Hours</small></span>
+            <span>{zeroPad(minutes)} <small>Minutes</small></span>
+            <span>{zeroPad(seconds)} <small>Seconds</small></span>
+          </h3>
+        </>
       );
     }
   };

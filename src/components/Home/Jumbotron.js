@@ -3,10 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import CountdownTimer from "./CountdownTimer";
 import styles from "./Jumbotron.module.scss";
 
-export default function Jumbotron() {
-  const [isLogged, setIsLogged] = useState(false);
+export default function Jumbotron({ loggedIn }) {
 
-  const [event, setEvent] = useState({
+  const [event] = useState({
     round: 17,
     city: "Las Vegas",
     venue: "Sam Boyd Stadium",
@@ -24,13 +23,13 @@ export default function Jumbotron() {
   };
 
   return (
-    <div fluid className={styles["jumbotron"]}>
+    <div className={styles["jumbotron"]}>
       <div className={styles["city-background"]} style={cityBackground}></div>
       <div className={styles["slash-container"]}>
         <div className={styles["rider-background"]} style={riderBackground}></div>
       </div>
       <Container className={styles["jumbotron-container"]}>
-        <Row className="align-items-center">
+        <Row className="align-items-center" style={{ width: "100%" }}>
           <Col>
             <h1>
               <small>Next Round:</small><br />
@@ -40,9 +39,9 @@ export default function Jumbotron() {
           </Col>
           <Col className={styles["right-col"]}>
             <CountdownTimer eventDate={event.date} />
-            {isLogged
-              ? <button>Make Picks</button>
-              : <><button>Start League</button> <button>Join League</button></>
+            {loggedIn
+              ? <button className="btn btn-danger">Make Picks</button>
+              : <><button className="btn btn-info">Start League</button> <button className="btn btn-info">Join League</button></>
             }
           </Col>
         </Row>

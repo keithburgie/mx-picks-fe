@@ -1,10 +1,12 @@
 import React from "react";
 import Jumbotron from "./Jumbotron";
+import Leaderboard from "./Leaderboard"
 
-export default function Home() {
+export default function Home({ loggedIn }) {
   return (
     <>
-      <Jumbotron />
+      <Jumbotron loggedIn={loggedIn} />
+      <Leaderboard />
     </>
   );
 }

@@ -1,6 +1,6 @@
 @import "../../variables";
 
-$jumbotronHeight: 40vh;
+$jumbotronHeight: 100vh;
 $slashWidth: 100px;
 $slashColor: gray;
 $slashSkew: 15deg;
@@ -8,7 +8,8 @@ $slashSkew: 15deg;
 .jumbotron {
   color: white;
   height: $jumbotronHeight;
-  max-height: 600px;
+  padding-top: 100px;
+  max-height: 700px;
   position: relative;
   overflow: hidden;
 
@@ -54,27 +55,6 @@ $slashSkew: 15deg;
     transform: skew(-$slashSkew);
     overflow: hidden;
     // border-left: 20px solid blue;
-
-    // &:before {
-    //   content: "";
-    //   width: 0;
-    //   height: 100%;
-    //   border-style: solid;
-    //   border-width: 0 0 $jumbotronHeight $slashWidth;
-    //   border-color: transparent transparent $slashColor transparent;
-    //   position: absolute;
-    //   top: 0;
-    //   left: -$slashWidth;
-    // }
-    // &:after {
-    //   content: "";
-    //   width: 2rem;
-    //   height: 100%;
-    //   background: yellow;
-    //   position: absolute;
-    //   top: 0;
-    //   left: -2rem;
-    // }
   }
 
   
@@ -82,4 +62,7 @@ $slashSkew: 15deg;
 
 .right-col {
   text-align: center;
+  button + button {
+    margin-left: 1rem;
+  }
 }
