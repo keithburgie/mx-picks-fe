@@ -12,7 +12,7 @@ export default function CountdownTimer({ eventDate }) {
       return (
         <>
           <h2>
-            Next Event Starts In:
+            Next Event:
           </h2>
           <h3 className="countdown">
             <span>{zeroPad(days)} <small>Days</small></span>

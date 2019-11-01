@@ -7,11 +7,8 @@ import Home from "./views/home";
 
 export default function App() {
 
-  const [loggedIn, setLoggedIn] = useState(false)
-
-  const handleLogin = () => {
-    setLoggedIn(!loggedIn)
-  }
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handleLogin = () => setLoggedIn(!loggedIn);
 
   return (
     <>

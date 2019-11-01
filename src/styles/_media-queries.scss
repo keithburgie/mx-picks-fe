@@ -1,6 +1,9 @@
-@import './variables';
+$sm-screen-width: 576px;
+$md-screen-width: 768px;
+$lg-screen-width: 992px;
+$xl-screen-width: 1200px;
 
-@mixin mobile-screens {
+@mixin mobile-only {
   @media (max-width: #{$sm-screen-width - 1px}) {
     @content;
   }

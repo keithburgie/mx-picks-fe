@@ -1,15 +1,22 @@
+@import '../../styles/variables';
+
 $jumbotronHeight: 100vh;
+$jumbotronMaxHeight: 700px;
 $slashWidth: 100px;
-$slashColor: gray;
 $slashSkew: 15deg;
 
 .jumbotron {
-  color: white;
+  color: $white;
   height: $jumbotronHeight;
   padding-top: 100px;
-  max-height: 700px;
+  max-height: $jumbotronMaxHeight;
   position: relative;
   overflow: hidden;
+  text-align: center;
+
+  @include md-screens {
+    text-align: left;
+  }
 
   #{&}-container {
     display: flex;
@@ -17,45 +24,45 @@ $slashSkew: 15deg;
 
     &::before {
       content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,.4);
+      @include absolute-container;
+      background-color: rgba($black,.4);
     }
   }
 
-  .city-background,
-  .rider-background {
-    position: absolute;
-    background: center center no-repeat;
+  .has-background {
+    @include absolute-container;
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-  }
-  .rider-background {
-    transform: skew($slashSkew);
-    width: 110%;
-    right: 10%;
-    background-position: left;
+    background-position: center center;
   }
   
   .slash-container {
     position: absolute;
-    background: $slashColor;
-    width: 67%;
-    height: 100%;
-    right: -10%;
-    top: 0;
-    transform: skew(-$slashSkew);
-    overflow: hidden;
-    // border-left: 20px solid blue;
-  }
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    width: 100%;
 
-  
+    @include md-screens {
+      overflow: hidden;
+      height: 100%;
+      width: 67%;
+      right: -10%;
+      bottom: auto;
+      top: 0;
+      transform: skew(-$slashSkew);
+    }
+
+    .rider-background {
+      background-position: left;
+
+      @include md-screens {
+      transform: skew($slashSkew);
+      width: 110%;
+      right: 10%;
+      }
+    }
+  }
 }
 
 .right-col {

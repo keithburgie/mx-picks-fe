@@ -24,20 +24,20 @@ export default function Jumbotron({ loggedIn }) {
 
   return (
     <div className="jumbotron">
-      <div className="city-background" style={cityBackground}></div>
+      <div className="has-background city-background" style={cityBackground}></div>
       <div className="slash-container">
-        <div className="rider-background" style={riderBackground}></div>
+        <div className="has-background rider-background" style={riderBackground}></div>
       </div>
-      <Container className="jumbotron-container">
+      <Container fluid className="jumbotron-container">
         <Row className="align-items-center" style={{ width: "100%" }}>
-          <Col>
+          <Col md={6}>
             <h1>
               <small>Next Round:</small><br />
               {event.city} <br />
               <small>{event.venue}</small>
             </h1>
           </Col>
-          <Col className="right-col">
+          <Col md={6} className="right-col">
             <Countdown eventDate={event.date} />
             {loggedIn
               ? <button className="btn btn-danger">Make Picks</button>
