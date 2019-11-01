@@ -1,5 +1,6 @@
 import React from "react";
 import Countdown, { zeroPad } from "react-countdown-now";
+import './countdown.scss';
 
 const DropTheGate = () => <h2>Countdown Complete!</h2>;
 

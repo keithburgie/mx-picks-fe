@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CountdownTimer from "./CountdownTimer";
-import styles from "./Jumbotron.module.scss";
+import Countdown from "./countdown";
+import './jumbotron.scss'
 
 export default function Jumbotron({ loggedIn }) {
 
@@ -10,8 +10,8 @@ export default function Jumbotron({ loggedIn }) {
     city: "Las Vegas",
     venue: "Sam Boyd Stadium",
     date: "2019-12-29T03:00-0000",
-    cityBackground: "vegas.jpg",
-    riderBackground: "tomac.jpg"
+    cityBackground: "images/vegas.jpg",
+    riderBackground: "images/tomac.jpg"
   });
 
   const cityBackground = {
@@ -23,12 +23,12 @@ export default function Jumbotron({ loggedIn }) {
   };
 
   return (
-    <div className={styles["jumbotron"]}>
-      <div className={styles["city-background"]} style={cityBackground}></div>
-      <div className={styles["slash-container"]}>
-        <div className={styles["rider-background"]} style={riderBackground}></div>
+    <div className="jumbotron">
+      <div className="city-background" style={cityBackground}></div>
+      <div className="slash-container">
+        <div className="rider-background" style={riderBackground}></div>
       </div>
-      <Container className={styles["jumbotron-container"]}>
+      <Container className="jumbotron-container">
         <Row className="align-items-center" style={{ width: "100%" }}>
           <Col>
             <h1>
@@ -37,8 +37,8 @@ export default function Jumbotron({ loggedIn }) {
               <small>{event.venue}</small>
             </h1>
           </Col>
-          <Col className={styles["right-col"]}>
-            <CountdownTimer eventDate={event.date} />
+          <Col className="right-col">
+            <Countdown eventDate={event.date} />
             {loggedIn
               ? <button className="btn btn-danger">Make Picks</button>
               : <><button className="btn btn-info">Start League</button> <button className="btn btn-info">Join League</button></>

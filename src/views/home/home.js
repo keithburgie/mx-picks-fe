@@ -1,6 +1,6 @@
 import React from "react";
-import Jumbotron from "./Jumbotron";
-import Leaderboard from "./Leaderboard"
+import Jumbotron from "../../components/jumbotron";
+import Leaderboard from "../../components/leaderboard";
 
 export default function Home({ loggedIn }) {
   return (

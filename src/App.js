@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import Header from "./components/Layout/Header";
-import Footer from "./components/Layout/Footer";
-import Home from "./components/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import Home from "./views/home";
 
 export default function App() {
 
@@ -16,7 +15,7 @@ export default function App() {
 
   return (
     <>
-      <Header loggedIn={loggedIn} handleLogin={handleLogin} />
+      <Navbar loggedIn={loggedIn} handleLogin={handleLogin} />
       <Home loggedIn={loggedIn} />
       <Footer />
     </>

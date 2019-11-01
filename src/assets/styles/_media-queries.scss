@@ -1,0 +1,31 @@
+@import './variables';
+
+@mixin mobile-screens {
+  @media (max-width: #{$sm-screen-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-screens {
+  @media (min-width: #{$sm-screen-width}) {
+    @content;
+  }
+}
+
+@mixin md-screens {
+  @media (min-width: #{$md-screen-width}) {
+    @content;
+  }
+}
+
+@mixin lg-screens {
+  @media (min-width: #{$lg-screen-width}) {
+    @content;
+  }
+}
+
+@mixin xl-screens {
+  @media (min-width: #{$xl-screen-width}) {
+    @content;
+  }
+}

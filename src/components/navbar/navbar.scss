@@ -1,0 +1,40 @@
+.navbar {
+  height: 100px;
+  background: rgba(30, 36, 42, 0.25);
+  padding: 0 100px;
+  text-transform: uppercase;
+  transition: all .2s;
+
+  &.isScrolled {
+    height: 65px;
+    background: rgba(30, 36, 42, 0.82);
+  }
+
+  #{&}-brand {
+    color: white;
+
+    &:hover, &:focus {
+      color: #32c5d2;
+    }
+  }
+
+  #{&}-nav {
+    align-items: center;
+
+    .nav-link {
+      color: white;
+      letter-spacing: 1px;
+      padding: 1rem;
+      transition: all 0.2s;
+      font-weight: 600;
+      
+      &:last-of-type {
+        margin-right: 1rem;
+      }    
+
+      &:hover, &:focus {
+        color: #32c5d2;
+      }
+    }
+  }
+}

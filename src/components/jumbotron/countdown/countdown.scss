@@ -1,0 +1,10 @@
+.countdown {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 3rem;
+  
+    small {
+      display: block;
+    }
+  }

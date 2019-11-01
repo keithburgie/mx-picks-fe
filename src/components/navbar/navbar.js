@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 // import logo from "../../logo.jpg";
-import { Button, Container, Navbar, Nav } from "react-bootstrap";
+import { Button, Container, Navbar, Nav } from "react-bootstrap"
+import './navbar.scss'
 
-export default function Header({ loggedIn, handleLogin }) {
+export default function TopNav({ loggedIn, handleLogin }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = e => {
