@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import 'styles/variables';
 
 .countdown {
     display: flex;
@@ -11,7 +11,7 @@
   
     small {
       display: block;
-      @include mobile-only {
+      @include mobile-screens {
         font-size: 70%;
       }
     }

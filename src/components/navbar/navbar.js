@@ -4,8 +4,9 @@ import { Button, Container, Navbar, Nav } from "react-bootstrap"
 import './navbar.scss'
 
 export default function TopNav({ loggedIn, handleLogin }) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  // Detect when mobile navigation is opened
   const toggleNav = () => {
     const navbar = document.querySelector('.navbar');
     navbar.classList.contains('menu-open')
@@ -13,11 +14,10 @@ export default function TopNav({ loggedIn, handleLogin }) {
       : navbar.classList.add('menu-open');
   }
 
+  // Detect when scrolled to top of page
   const detectTop = () => {
     const root = document.documentElement
-    // const navbar = document.querySelector('.navbar');
-    // root.scrollTop > navbar.offsetHeight / 2
-    root.scrollTop > 0 ? setIsScrolled(true) : setIsScrolled(false);
+    root.scrollTop > 0 ? setScrolled(true) : setScrolled(false);
   }
 
   window.onscroll = () => detectTop()
@@ -27,7 +27,7 @@ export default function TopNav({ loggedIn, handleLogin }) {
       collapseOnSelect
       fixed="top"
       expand="md"
-      className={isScrolled && "is-scrolled"}
+      className={scrolled && "is-scrolled"}
     >
       <Container fluid>
         <Navbar.Brand href="#home">MX PICKS</Navbar.Brand>

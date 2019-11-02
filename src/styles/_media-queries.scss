@@ -3,8 +3,20 @@ $md-screen-width: 768px;
 $lg-screen-width: 992px;
 $xl-screen-width: 1200px;
 
-@mixin mobile-only {
+@mixin mobile-screens {
   @media (max-width: #{$sm-screen-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-down-screens {
+  @media (max-width: #{$md-screen-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-down-screens {
+  @media (max-width: #{$lg-screen-width - 1px}) {
     @content;
   }
 }

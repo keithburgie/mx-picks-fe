@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import 'styles/variables';
 
 $jumbotronHeight: 100vh;
 $jumbotronMaxHeight: 700px;
@@ -9,6 +9,7 @@ $slashSkew: 15deg;
   color: $white;
   height: $jumbotronHeight;
   padding-top: 100px;
+  margin-bottom: 0;
   max-height: $jumbotronMaxHeight;
   position: relative;
   overflow: hidden;
@@ -33,7 +34,14 @@ $slashSkew: 15deg;
     @include absolute-container;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right center;
+
+    &.city-background {
+      @include sm-down-screens {
+        background-size: contain;
+        background-position: top center;
+      }
+    }
   }
   
   .slash-container {

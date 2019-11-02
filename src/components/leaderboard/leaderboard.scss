@@ -1,0 +1,14 @@
+@import 'styles/variables';
+
+.leaderboard {
+    background: $trout;
+    padding: 2rem 0;
+
+    table {
+        box-shadow: 0px 0px 2px 1px rgba($jaguar,0.8);
+    }
+
+    button {
+        margin-left: 1rem;
+    }
+}

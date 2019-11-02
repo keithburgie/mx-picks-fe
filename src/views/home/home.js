@@ -6,7 +6,7 @@ export default function Home({ loggedIn }) {
   return (
     <>
       <Jumbotron loggedIn={loggedIn} />
-      <Leaderboard />
+      <Leaderboard loggedIn={loggedIn} />
     </>
   );
 }

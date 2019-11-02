@@ -1,5 +1,5 @@
-@import './colors';
-@import './media-queries';
+@import 'styles/colors';
+@import 'styles/media-queries';
 
 @mixin absolute-container {
     position: absolute;
