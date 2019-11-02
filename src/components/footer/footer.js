@@ -1,9 +1,10 @@
 import React from "react";
+import Section from "../section";
 
 export default function Footer() {
   return (
-    <div style={{ padding: "4rem" }}>
+    <Section>
       <h5 className="text-center">Nothing in the footer yet.</h5>
-    </div>
+    </Section>
   );
 }

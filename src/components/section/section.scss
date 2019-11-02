@@ -1,0 +1,9 @@
+@import "styles/variables";
+
+.section {
+  padding: 2rem 0;
+
+  &:nth-child(odd) {
+    background: $trout;
+  }
+}

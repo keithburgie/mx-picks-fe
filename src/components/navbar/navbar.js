@@ -16,8 +16,10 @@ export default function TopNav({ loggedIn, handleLogin }) {
 
   // Detect when scrolled to top of page
   const detectTop = () => {
+    const navbar = document.querySelector('.navbar');
     const root = document.documentElement
-    root.scrollTop > 0 ? setScrolled(true) : setScrolled(false);
+    // root.scrollTop > 0 ? setScrolled(true) : setScrolled(false);
+    root.scrollTop > navbar.offsetHeight ? setScrolled(true) : setScrolled(false);
   }
 
   window.onscroll = () => detectTop()
